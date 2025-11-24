@@ -5,6 +5,13 @@ namespace app\modules\api\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
+/**
+ * @property-read int $id
+ * @property string $title
+ * @property string $author
+ * @property int $year
+ * @property int $user_id
+ */
 class Book extends \yii\db\ActiveRecord
 {
     public static function tableName()

@@ -95,6 +95,9 @@ class UsersController extends \yii\rest\ActiveController
             $user->setPassword($userForm->password);
             $user->generateAuthKey();
             if ($user->save()) {
+                $authManager = Yii::$app->authManager;
+                $permission = $authManager->getPermission('ownBook');
+                $authManager->assign($permission,$user->id);
                 return ['user' => $user];
             } else {
                 \Yii::$app->response->statusCode = 500;
