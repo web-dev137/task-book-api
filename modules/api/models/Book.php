@@ -49,7 +49,7 @@ class Book extends \yii\db\ActiveRecord
             'id',
             'title',
             'author',
-            'year',
+            'published_year'=>'year',
             'author'
         ];
     }

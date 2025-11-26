@@ -21,6 +21,7 @@ class BooksController extends ActiveController
         ];
         $behaviors['authenticator'] = [
                 'class' => HttpBearerAuth::class,
+                'only' => ['create', 'update', 'delete']
         ];
     
         $behaviors['access'] = [
